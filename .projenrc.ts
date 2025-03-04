@@ -7,7 +7,7 @@ const project = new typescript.TypeScriptProject({
   deps: [
     // API & Server
     'express',
-    '@types/express'
+    '@types/express',
   ],
   // devDeps: [],             /* Build dependencies for this module. */
   devDeps: [
@@ -24,14 +24,14 @@ const project = new typescript.TypeScriptProject({
 
     // Development utilities
     'nodemon',
-    'prettier'
+    'prettier',
   ],
   jest: true,
-  sampleCode: false
+  sampleCode: false,
   // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
   // packageName: undefined,  /* The "name" in package.json. */
 });
 project.addTask('dev', {
-  exec: 'node esbuild.mjs && node dist/index.js'
+  exec: 'node esbuild.mjs && node dist/index.js',
 });
 project.synth();
