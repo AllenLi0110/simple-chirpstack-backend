@@ -15,6 +15,8 @@ jobs:
       contents: write
       pull-requests: write
       id-token: write
+      checks: write
+      statuses: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -43,7 +45,8 @@ jobs:
       - name: Create Pull Request
         continue-on-error: true
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PROJEN_GITHUB_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
           PR_BODY: |
             # Pull Request
 
